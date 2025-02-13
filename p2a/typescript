@@ -1,0 +1,8 @@
+Script started on 2023-02-10 14:33:26-06:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="147" LINES="24"]
+[?2004h[degrazia@vm-instunix-06] (1)$ [7mgcc check_board.c -Wall -m32 -std=gnu99 -o check_board[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cgcc check_board.c -Wall -m32 -std=gnu99 -o check_board
+[?2004l[?2004h[degrazia@vm-instunix-06] (2)$ ./check_board board1./[K[K.txt 
+[?2004lvalid
+[?2004h[degrazia@vm-instunix-06] (3)$ exit
+[?2004lexit
+
+Script done on 2023-02-10 14:33:41-06:00 [COMMAND_EXIT_CODE="0"]

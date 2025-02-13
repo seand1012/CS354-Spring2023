@@ -1,0 +1,8 @@
+Script started on 2023-02-05 18:24:14-06:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="143" LINES="29"]
+[?2004h[degrazia@vm-instunix-03] (1)$ exitgcc simple_sequence.c -Wall -m32 -std=gnu99 -o simple_sequence
+[?2004l[?2004h[degrazia@vm-instunix-03] (2)$ gcc simple_sequence.c -Wall -m32 -std=gnu99 -o simple_sequence[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Kgcc simple_sequence.c -Wall -m32 -std=gnu99 -o simple_sequence[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls -a[Kgcc simple_sequence.c -Wall -m32 -std=gnu99 -o simple_sequence[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cexit[Kgcc simple_sequence.c -Wall -m32 -std=gnu99 -o simple_sequence[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K./simple_sequence
+[?2004l1,2,3,4,5,6,7,8,9,10
+[?2004h[degrazia@vm-instunix-03] (3)$ exit
+[?2004lexit
+
+Script done on 2023-02-05 18:24:38-06:00 [COMMAND_EXIT_CODE="0"]

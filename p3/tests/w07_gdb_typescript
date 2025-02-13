@@ -1,0 +1,94 @@
+Script started on 2023-03-05 17:30:28-06:00 [TERM="xterm-256color" TTY="/dev/pts/17" COLUMNS="158" LINES="53"]
+[?2004h[degrazia@rockhopper-07] (1)$ [7mgdb test_alloc1[27mgdb test_alloc1
+[?2004l[35;1mGNU gdb (Ubuntu 12.1-0ubuntu1~22.04) 12.1[m
+Copyright (C) 2022 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from [32mtest_alloc1[m...
+[?2004h(gdb) brek main[K[K[K[K[K[Kak main
+[?2004lBreakpoint 1 at [34m0x6ae[m: file [32mtest_alloc1.c[m, line 7.
+[?2004h(gdb) break 9
+[?2004lBreakpoint 2 at [34m0x6ee[m: file [32mtest_alloc1.c[m, line 9.
+[?2004h(gdb) run
+[?2004lStarting program: [32m/home/degrazia/private/cs354/p3/tests/test_alloc1[m 
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "[32m/lib/x86_64-linux-gnu/libthread_db.so.1[m".
+
+Breakpoint 1, [33mmain[m () at [32mtest_alloc1.c[m:7
+7	    [01massert[m[31m([m[01minit_heap[m[31m([m[35m4096[m[31m)[m [31m==[m [35m0[m[31m);[m
+[?2004h[?2004l[?2004h(gdb) ;[Klist
+[?2004l2	[01;34m#include[m [31m<assert.h>[m
+3	[01;34m#include[m [31m<stdlib.h>[m
+4	[01;34m#include[m [31m"p3Heap.h"[m
+5	
+6	[32mint[m [01mmain[m[31m()[m [31m{[m
+7	    [01massert[m[31m([m[01minit_heap[m[31m([m[35m4096[m[31m)[m [31m==[m [35m0[m[31m);[m
+8	    [32mvoid[m[31m*[m ptr [31m=[m [01mballoc[m[31m([m[35m8[m[31m);[m
+9	    [01massert[m[31m([mptr [31m!=[m NULL[31m);[m
+10	    [01mexit[m[31m([m[35m0[m[31m);[m
+11	[31m}[m
+[?2004h(gdb) next
+[?2004l8	    [32mvoid[m[31m*[m ptr [31m=[m [01mballoc[m[31m([m[35m8[m[31m);[m
+[?2004h[?2004l[?2004h(gdb) step
+[?2004l[33mballoc[m ([36msize[m=8) at [32mp3Heap.c[m:113
+113		[01;34mif[m[31m([msize [31m<[m [35m1[m[31m)[m[31m{[m
+[?2004h[?2004l[?2004h(gdb) lsi[K[Kist
+[?2004l108	[36m * Tips: Be careful with pointer arithmetic and scale factors.[m
+109	[36m */[m
+110	[32mvoid[m[31m*[m [01mballoc[m[31m([m[32mint[m size[31m)[m [31m{[m     
+111	    [36m//TODO: Your code goes in here.[m
+112		
+113		[01;34mif[m[31m([msize [31m<[m [35m1[m[31m)[m[31m{[m
+114			[01;34mreturn[m NULL[31m;[m
+115		[31m}[m
+116	   
+117		[36m//blockHeader* bH = heap_start;[m
+[?2004h(gdb) print size
+[?2004l$1 = 8
+[?2004h(gdb) print sizeof(bo[KlockHeader)
+[?2004l$2 = 4
+[?2004h(gdb) print heap_size->size-status
+[?2004lNo symbol "heap_size" in current context.
+[?2004h(gdb) print heap_size->size-status[1Pstatus_status
+[?2004lNo symbol "heap_size" in current context.
+[?2004h(gdb) print heap_size->size_status[1P->size_status[1P->size_status[1P->size_status[1P->size_statuss->size_statust->size_statusa->size_statusr->size_statust->size_status
+[?2004l$3 = 4090
+[?2004h(gdb) print heap_start
+[?2004l$4 = (blockHeader *[36m[m) [34m0xf7fb8004[m
+[?2004h(gdb) print heap_start+sizeof(nlock[K[K[K[K[KblockHeader)
+[?2004l$5 = (blockHeader *[36m[m) [34m0xf7fb8014[m
+[?2004h(gdb) [7mprint (void *) heap_start + sizeof(blockHeader)[27m[C[C[C[C[C[Cprint (void *) heap_start + sizeof(blockHeader)
+[?2004l$6 = (void *[36m[m) [34m0xf7fb8008[m
+[?2004h(gdb) continue
+[?2004lContinuing.
+
+Breakpoint 2, [33mmain[m () at [32mtest_alloc1.c[m:9
+9	    [01massert[m[31m([mptr [31m!=[m NULL[31m);[m
+[?2004h[?2004l[?2004h(gdb) print ptr
+[?2004l$7 = (void *[36m[m) [34m0x0[m
+[?2004h(gdb) next
+[?2004lUnexpected error.
+
+Program received signal SIGABRT, Aborted.
+[34m0xf7fc4549[m in [33m__kernel_vsyscall[m ()
+[?2004h[?2004l[?2004h(gdb) quit
+[?2004l[?2004hA debugging session is active.
+
+	Inferior 1 [process 589569] will be killed.
+
+Quit anyway? (y or n) y
+[?2004l[?2004h[degrazia@rockhopper-07] (2)$ exit
+[?2004lexit
+\
+Script done on 2023-03-05 17:40:21-06:00 [COMMAND_EXIT_CODE="0"]
